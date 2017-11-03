@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>counter</title>
+  </head>
+  <body>
+    <h1>Counter Page!!!!!</h1>
+    <hr>
+    <h1>
+      <%= counter %> times.
+    </h1>
+    <hr>
+    <section>
+      <aside>
+        <form action="/add-two" method="post">
+          <input type="submit" value="Click me + 2">
+        </form>
+      </aside>
+    </section>
+    <br><br>
+    <section>
+      <aside>
+        <form action="/reset" method="post">
+          <input type="submit" value="Reset">
+        </form>
+      </aside>
+    </section>
+  </body>
+</html>

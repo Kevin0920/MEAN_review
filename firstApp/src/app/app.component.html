@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1 *ngIf="true">show here</h1>
+    <h1 *ngIf="false">no showing anything</h1>
+
+    <span [ngStyle]="{'color': 'green', 'font-weight': 'bold', 'font-size': '100px'}">Here is the span</span>
+
+    <ul>
+      <li *ngFor="let index of myArr">
+        {{index | uppercase}}
+      </li>
+    </ul>
+  </body>
+</html>
