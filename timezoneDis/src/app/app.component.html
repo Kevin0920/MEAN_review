@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <hr>
+    <!-- <div class="container">
+        <button (click)="logNum()" class="btn btn-primary">Log the num value</button>
+        <button (click)="num = num + 1" class="btn btn-success">Increment Button</button>
+    </div> -->
+
+    <div class="container">
+      <button (click)="getDateByZone()" [ngClass]="{selected: theTimeZoneSelected === 'PST'}" class="btn btn-primary">PST</button>
+      <button (click)="getDateByZone()" [ngClass]="{selected: theTimeZoneSelected === 'MST'}" class="btn btn-primary">MST</button>
+      <button (click)="getDateByZone()" [ngClass]="{selected: theTimeZoneSelected === 'CST'}" class="btn btn-primary">CST</button>
+      <button (click)="getDateByZone()" [ngClass]="{selected: theTimeZoneSelected === 'EST'}" class="btn btn-primary">EST</button>
+
+
+      <button (click)="getDateByZone()" class="btn btn-primary">Clear</button>
+    </div>
+    <hr>
+    <div class="container">
+      <h4>{{time | date:"medium"}}</h4>
+    </div>
+
+  </body>
+</html>

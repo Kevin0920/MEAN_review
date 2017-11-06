@@ -1,0 +1,11 @@
+button {
+  margin: 10px;
+}
+
+button text {
+  font-size: 20px;
+}
+
+.selected {
+  background-color: yellow;
+}
