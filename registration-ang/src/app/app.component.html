@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+      <div class="container">
+        <span style="color: green">{{ success }}</span>
+      </div>
+      <hr>
+      <form (submit)="onSubmit()" method="post">
+        <div class="form-group">
+          <label>First Name:</label>
+          <input type="text" class="form-control" name="first_name" [(ngModel)]="user.first_name"
+          required
+          minlength="4"
+          maxlength="24"
+          #first_name="ngModel"
+          >
+          <div *ngIf="!first_name.valid && (first_name.dirty || first_name.touched)">
+            <span style="color: red">First name is required !</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Last Name:</label>
+          <input type="text" class="form-control" name="last_name" [(ngModel)]="user.last_name"
+          required
+          minlength="4"
+          maxlength="24"
+          #last_name="ngModel"
+          >
+          <div *ngIf="!last_name.valid && (last_name.dirty || last_name.touched)">
+            <span style="color: red">Last name is required !</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="text" class="form-control" name="email" [(ngModel)]="user.email"
+          required
+          minlength="4"
+          maxlength="24"
+          #email="ngModel"
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b"
+          >
+          <div *ngIf="!email.valid && (email.dirty || email.touched)">
+            <span style="color: red">Email is required !</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="text" class="form-control" name="password" [(ngModel)]="user.password"
+          required
+          minlength="4"
+          maxlength="24"
+          pattern="^([a-zA-Z0-9@*#]{8,15})$"
+          #password="ngModel"
+          >
+          <div *ngIf="!password.valid && (password.dirty || password.touched)">
+            <span style="color: red">Password is required !</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password Confirmation:</label>
+          <input type="text" class="form-control" name="pass_con" [(ngModel)]="user.pass_con"
+          required
+          minlength="4"
+          maxlength="24"
+          pattern="^([a-zA-Z0-9@*#]{8,15})$"
+          #pass_con="ngModel"
+          >
+          <div *ngIf="!pass_con.valid && (pass_con.dirty || pass_con.touched)">
+            <span style="color: red">Password is required !</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Street Address:</label>
+          <input type="text" class="form-control" name="address" [(ngModel)]="user.address"
+          required
+          minlength="4"
+          maxlength="24"
+          #address="ngModel"
+          >
+          <div *ngIf="!address.valid && (address.dirty || address.touched)">
+            <span style="color: red">Address is required !</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Unit/Apt#:</label>
+          <input type="text" class="form-control" name="unit" [(ngModel)]="user.unit"
+          #unit="ngModel"
+          >
+        </div>
+        <div class="form-group">
+          <label>City:</label>
+          <input type="text" class="form-control" name="city" [(ngModel)]="user.city"
+          required
+          minlength="1"
+          maxlength="24"
+          #city="ngModel"
+          >
+          <div *ngIf="!city.valid && (city.dirty || city.touched)">
+            <span style="color: red">City is required !</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>State:</label>
+          <select class="form-control" name="state">
+            <option value="California">California</option>
+            <option value="New York">New York</option>
+            <option value="Alaska">Alaska</option>
+            <option value="Arizona">Arizona</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>I'm feeling lucky:</label>
+          <input type="radio" name="answer" value="yes"> Yes
+          <input type="radio" name="answer" value="no"> No
+        </div>
+
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+  </body>
+</html>
